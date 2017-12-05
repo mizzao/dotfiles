@@ -28,7 +28,11 @@
 (setq indent-line-function 'insert-tab)
 
 ;; increase default font size
-(set-face-attribute 'default nil :height 130)
+(set-face-attribute 'default nil :height 132)
+
+;; DEL is deleting the wrong way
+;; https://www.gnu.org/software/emacs/manual/html_node/emacs/DEL-Does-Not-Delete.html
+(normal-erase-is-backspace-mode 1)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
