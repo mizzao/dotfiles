@@ -28,7 +28,7 @@
 (setq indent-line-function 'insert-tab)
 
 ;; increase default font size
-(set-face-attribute 'default nil :height 100)
+(set-face-attribute 'default nil :height 120)
 
 ;; DEL is deleting the wrong way
 ;; https://www.gnu.org/software/emacs/manual/html_node/emacs/DEL-Does-Not-Delete.html
