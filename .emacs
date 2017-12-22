@@ -32,7 +32,7 @@
 
 ;; DEL is deleting the wrong way
 ;; https://www.gnu.org/software/emacs/manual/html_node/emacs/DEL-Does-Not-Delete.html
-(normal-erase-is-backspace-mode 1)
+(normal-erase-is-backspace-mode 0)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
