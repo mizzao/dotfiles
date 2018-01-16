@@ -87,8 +87,6 @@ fi
 # colored GCC warnings and errors
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
-alias k='kubectl'
-
 # some more ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
@@ -126,3 +124,6 @@ export PATH="/home/mao/miniconda3/bin:$PATH"
 
 # https://developer.atlassian.com/blog/2016/02/best-way-to-store-dotfiles-git-bare-repo/
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+
+# Work configs, if available
+[ -f ~/.ctrl.bash ] && source ~/.ctrl.bash
