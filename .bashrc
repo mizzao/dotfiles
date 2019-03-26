@@ -125,5 +125,16 @@ export PATH="/home/mao/miniconda3/bin:$PATH"
 # https://developer.atlassian.com/blog/2016/02/best-way-to-store-dotfiles-git-bare-repo/
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
+# Git aware
+export GITAWAREPROMPT=~/projects/git-aware-prompt
+source "${GITAWAREPROMPT}/main.sh"
+# https://github.com/jimeh/git-aware-prompt#ubuntu
+export PS1="\${debian_chroot:+(\$debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\] \[$txtcyn\]\$git_branch\[$txtred\]\$git_dirty\[$txtrst\]\$ "
+
 # Work configs, if available
 [ -f ~/.ctrl.bash ] && source ~/.ctrl.bash
+
+# rbenv
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
