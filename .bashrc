@@ -116,8 +116,9 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# added by Miniconda3 installer
-export PATH="/home/mao/miniconda3/bin:$PATH"
+##########################
+# dotfiles specific config
+##########################
 
 # Load fzf if it is installed
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
@@ -127,14 +128,25 @@ alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 # Git aware
 export GITAWAREPROMPT=~/projects/git-aware-prompt
-source "${GITAWAREPROMPT}/main.sh"
-# https://github.com/jimeh/git-aware-prompt#ubuntu
-export PS1="\${debian_chroot:+(\$debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\] \[$txtcyn\]\$git_branch\[$txtred\]\$git_dirty\[$txtrst\]\$ "
+if [ -d $GITAWAREPROMPT ]; then
+    source "${GITAWAREPROMPT}/main.sh"
+    # https://github.com/jimeh/git-aware-prompt#ubuntu
+    export PS1="\${debian_chroot:+(\$debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\] \[$txtcyn\]\$git_branch\[$txtred\]\$git_dirty\[$txtrst\]\$ "
+fi
 
-# Work configs, if available
-[ -f ~/.ctrl.bash ] && source ~/.ctrl.bash
+# yarn
+if [ -x "$(command -v yarn)" ]; then
+    export PATH="$(yarn global bin):$PATH"
+fi
 
-# rbenv
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
-export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
+# elements
+export PATH="./bin:~/elements/bin:$PATH";
+
+# go
+export GOPATH="$HOME/go"
+export PATH="$PATH:/usr/local/go/bin:$GOPATH/bin"
+
+# brew
+export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
+# Bash completion
+[[ -r "/home/linuxbrew/.linuxbrew/etc/profile.d/bash_completion.sh" ]] && . "/home/linuxbrew/.linuxbrew/etc/profile.d/bash_completion.sh"
