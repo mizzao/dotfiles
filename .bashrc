@@ -118,13 +118,11 @@ fi
 
 ##########################
 # dotfiles specific config
+# https://developer.atlassian.com/blog/2016/02/best-way-to-store-dotfiles-git-bare-repo/
 ##########################
 
 # Load fzf if it is installed
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-
-# https://developer.atlassian.com/blog/2016/02/best-way-to-store-dotfiles-git-bare-repo/
-alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 # Git aware
 export GITAWAREPROMPT=~/projects/git-aware-prompt
