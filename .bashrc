@@ -150,3 +150,14 @@ export PATH="$PATH:/usr/local/go/bin:$GOPATH/bin"
 export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
 # Bash completion
 [[ -r "/home/linuxbrew/.linuxbrew/etc/profile.d/bash_completion.sh" ]] && . "/home/linuxbrew/.linuxbrew/etc/profile.d/bash_completion.sh"
+
+# Open up ~/projects/$1 or create it if it does not exist
+proj() {
+    local proj_name=$1
+    local proj_path="$HOME/projects/$proj_name"
+    if [ ! -d proj_path ]; then
+        mkdir -p $proj_path
+    fi
+    cd $proj_path
+}
+
