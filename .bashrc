@@ -155,9 +155,14 @@ export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
 proj() {
     local proj_name=$1
     local proj_path="$HOME/projects/$proj_name"
-    if [ ! -d proj_path ]; then
-        mkdir -p $proj_path
+    if [ ! -d $proj_path ]; then
+        mkdir -p $proj_path && echo "Created $proj_path"
+    else
+        echo "-> Existing $proj_path"
     fi
     cd $proj_path
 }
 
+if [ -f ~/.elements.bash ]; then
+    . ~/.elements.bash
+fi
