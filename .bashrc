@@ -140,7 +140,7 @@ if [ -x "$(command -v yarn)" ]; then
 fi
 
 # elements
-export PATH="./bin:~/elements/bin:$PATH";
+export PATH="./node_modules/.bin:$HOME/elements/bin:$PATH";
 
 # go
 export GOPATH="$HOME/go"
