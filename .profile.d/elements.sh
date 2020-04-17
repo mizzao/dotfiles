@@ -1,4 +1,12 @@
-alias els="elements"
+dev_elements="$GOPATH/bin/elements"
+
+alias els="FEAT_EXPERIMENTAL=1 $dev_elements"
+alias elocal="ELEMENTS_API="http://127.0.0.1:4001" $dev_elements"
+
+alias eserver='ELEMENTS_API="http://127.0.0.1:4001" el-api-server'
+
+# elements PATH
+export PATH="./node_modules/.bin:$HOME/elements/bin:$PATH";
 
 # Shortcut for getting to elements code directories
 el() {
