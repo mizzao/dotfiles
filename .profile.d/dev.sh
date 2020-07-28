@@ -22,11 +22,6 @@ else
     echo "Please check out jimeh/git-aware-prompt to ~/projects/"
 fi
 
-# yarn
-if [ -x "$(command -v yarn)" ]; then
-    export PATH="$(yarn global bin):$PATH"
-fi
-
 # go
 export GOPATH="$HOME/go"
 export PATH="$PATH:/usr/local/go/bin:$GOPATH/bin"
