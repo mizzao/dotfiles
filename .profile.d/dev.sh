@@ -22,6 +22,11 @@ else
     echo "Please check out jimeh/git-aware-prompt to ~/projects/"
 fi
 
+# git aliases
+alias gc='git commit'
+alias gd='git diff'
+alias gs='git status'
+
 # go
 export GOPATH="$HOME/go"
 export PATH="$PATH:/usr/local/go/bin:$GOPATH/bin"
