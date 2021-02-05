@@ -24,9 +24,14 @@ fi
 
 # git aliases
 alias gc='git commit'
+alias gca='git commit -a'
+alias gco='git checkout'
 alias gd='git diff'
 alias gs='git status'
 
 # go
 export GOPATH="$HOME/go"
 export PATH="$PATH:/usr/local/go/bin:$GOPATH/bin"
+
+# use emacs for default editor if available, e.g. for git commits
+export EDITOR="emacs"
