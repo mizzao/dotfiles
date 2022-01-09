@@ -28,6 +28,7 @@ alias gca='git commit -a'
 alias gco='git checkout'
 alias gd='git diff'
 alias gs='git status'
+alias gg='git grep'
 
 # go
 export GOPATH="$HOME/go"
